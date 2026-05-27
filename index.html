@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRIA Frames — Produtora Audiovisual com IA</title>
+    <meta name="description" content="Produtora audiovisual especializada em Inteligência Artificial. Criamos imagens, pôsteres, comerciais, curtas e longas com qualidade cinematográfica." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ===================== INTRO ===================== -->
+<div id="intro" class="intro">
+    <div class="intro-bars">
+        <div class="intro-bar intro-bar-top"></div>
+        <div class="intro-bar intro-bar-bottom"></div>
+    </div>
+
+    <div class="intro-center">
+        <!-- Spotlight icon (visible before logo reveals) -->
+        <div id="introSpot" class="intro-spot">
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="48" cy="60" r="14" fill="none" stroke="#fff" stroke-width="2.5"/>
+                <line x1="62" y1="48" x2="80" y2="36" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="62" y1="60" x2="96" y2="60" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="62" y1="72" x2="80" y2="84" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                <rect x="26" y="50" width="22" height="20" rx="4" fill="none" stroke="#fff" stroke-width="2.5"/>
+                <line x1="26" y1="60" x2="14" y2="60" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="21" y1="60" x2="21" y2="76" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+        </div>
+
+        <!-- Full logo (hidden, reveals on "spotlight on") -->
+        <div id="introLogoWrap" class="intro-logo-wrap">
+            <img src="assets/logo.png" alt="CRIA Frames" id="introLogoImg" class="logo-inv" />
+            <div id="introCurtain" class="intro-curtain"></div>
+            <div id="introFlash" class="intro-flash"></div>
+        </div>
+
+        <!-- Caption beneath logo -->
+        <div id="introCaption" class="intro-caption">
+            <span class="ic-line1">— A LUZ NUNCA SE APAGA —</span>
+            <span class="ic-line2">CRIA FRAMES · GOIÂNIA · BRASIL · 2026</span>
+        </div>
+    </div>
+
+    <button id="skipIntro" class="skip-btn">PULAR ›</button>
+</div>
+<!-- END INTRO -->
+
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header" id="siteHeader">
+    <button class="brand" data-tab="home" aria-label="Ir para início">
+        <img src="assets/logo.png" alt="CRIA" class="logo-inv" />
+        <span class="brand-name">CRIA<sup>®</sup> FRAMES</span>
+    </button>
+
+    <nav class="nav" id="mainNav">
+        <button class="nav-link active" data-tab="home">Início</button>
+        <button class="nav-link" data-tab="about">Sobre</button>
+        <button class="nav-link" data-tab="capabilities">Capacidades</button>
+        <button class="nav-link" data-tab="portfolio">Portfólio</button>
+        <button class="nav-link" data-tab="contact">Propostas</button>
+        <button class="nav-link nav-admin-btn" data-tab="admin" title="Área restrita">⬤</button>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
+</header>
+
+
+<!-- ===================== MAIN ===================== -->
+<main id="siteMain">
+
+    <!-- -------- HOME -------- -->
+    <section class="page page-home active" data-tab="home">
+        <div class="grain"></div>
+        <div class="scanlines"></div>
+
+        <div class="hero-wrap">
+            <div class="hero">
+                <p class="eyebrow"><span class="dot-live"></span> A PRIMEIRA PRODUTORA DE IA DE GOIÁS · GOIÂNIA · BRASIL</p>
+
+                <h1 class="hero-title">
+                    <span>NÓS</span>
+                    <span class="accent">CRIAMOS</span>
+                    <span>O IMPOSSÍVEL</span>
+                </h1>
+
+                <!-- Acronym decode badge -->
+                <div class="cria-badge" aria-label="Significado da sigla CRIA">
+                    <span class="cb-item"><b>C</b>riação</span>
+                    <span class="cb-sep">·</span>
+                    <span class="cb-item"><b>R</b>evolucionária</span>
+                    <span class="cb-sep">·</span>
+                    <span class="cb-item">com <b>I</b>nteligência</span>
+                    <span class="cb-sep">·</span>
+                    <span class="cb-item"><b>A</b>rtificial</span>
+                </div>
+
+                <p class="hero-desc">
+                    Somos a <strong>CRIA Frames</strong> — a primeira produtora de Inteligência Artificial de Goiás.
+                    Especializada em <em>IA generativa</em>, transformamos ideias em imagens, filmes e narrativas
+                    com qualidade cinematográfica, em uma fração do tempo e do custo.
+                </p>
+
+                <div class="hero-btns">
+                    <button class="btn btn-primary" data-tab="portfolio">Ver Portfólio</button>
+                    <button class="btn btn-outline" data-tab="contact">Enviar Proposta</button>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-box">
+                        <span class="m-num">7</span>
+                        <span class="m-label">dias úteis<br>por projeto</span>
+                    </div>
+                    <div class="metric-box">
+                        <span class="m-num">100<small>%</small></span>
+                        <span class="m-label">realismo<br>cinematográfico</span>
+                    </div>
+                    <div class="metric-box">
+                        <span class="m-num">∞</span>
+                        <span class="m-label">possibilidades<br>criativas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-inner">
+                <span>COMERCIAIS</span><b>·</b>
+                <span>FOTOGRAFIA HIPER-REAL</span><b>·</b>
+                <span>PÔSTERES</span><b>·</b>
+                <span>CURTAS</span><b>·</b>
+                <span>FILMES PUBLICITÁRIOS</span><b>·</b>
+                <span>LONGA-METRAGENS</span><b>·</b>
+                <span>BRANDED CONTENT</span><b>·</b>
+                <span>VIDEOCLIPES</span><b>·</b>
+                <span>COMERCIAIS</span><b>·</b>
+                <span>FOTOGRAFIA HIPER-REAL</span><b>·</b>
+                <span>PÔSTERES</span><b>·</b>
+                <span>CURTAS</span><b>·</b>
+                <span>FILMES PUBLICITÁRIOS</span><b>·</b>
+                <span>LONGA-METRAGENS</span><b>·</b>
+                <span>BRANDED CONTENT</span><b>·</b>
+                <span>VIDEOCLIPES</span><b>·</b>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- -------- SOBRE -------- -->
+    <section class="page page-about" data-tab="about">
+        <div class="container">
+            <div class="sec-head">
+                <span class="sec-tag">02 · NOSSA HISTÓRIA</span>
+                <h2 class="sec-title">A ideia esperou o seu tempo.</h2>
+            </div>
+
+            <!-- Cinematic acronym breakdown -->
+            <div class="cria-def" aria-label="C.R.I.A. — significado da sigla">
+                <div class="cda-row">
+                    <span class="cda-letter">C</span>
+                    <span class="cda-line"></span>
+                    <span class="cda-word">Criação</span>
+                </div>
+                <div class="cda-row">
+                    <span class="cda-letter">R</span>
+                    <span class="cda-line"></span>
+                    <span class="cda-word">Revolucionária</span>
+                </div>
+                <div class="cda-row">
+                    <span class="cda-letter">I</span>
+                    <span class="cda-line"></span>
+                    <span class="cda-word"><em>com</em> Inteligência</span>
+                </div>
+                <div class="cda-row">
+                    <span class="cda-letter">A</span>
+                    <span class="cda-line"></span>
+                    <span class="cda-word">Artificial</span>
+                </div>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="about-lead">
+                        A <strong>CRIA</strong> nasceu em <mark>2023</mark>, quando a inteligência artificial
+                        começava a sussurrar promessas de um novo cinema. Vimos antes — mas a tecnologia
+                        ainda não estava madura o suficiente para entregar a qualidade que sonhávamos.
+                    </p>
+                    <p>
+                        Esperamos. Estudamos. Acompanhamos cada salto, cada modelo, cada nova ferramenta.
+                        E <mark>hoje</mark>, em 2026, a tecnologia finalmente alcançou nossa ambição.
+                    </p>
+                    <p>
+                        Existem hoje <em>mais ferramentas do que o suficiente</em> para criarmos algo verdadeiramente
+                        lindo e cinematográfico para o seu negócio. Não falamos mais de promessa — falamos de execução.
+                        A luz, enfim, se acendeu.
+                    </p>
+                    <div class="sig">— Goiânia · 2026 —</div>
+                </div>
+
+                <div class="timeline">
+                    <div class="tl-row">
+                        <div class="tl-year">2023</div>
+                        <div class="tl-body">
+                            <strong>A faísca.</strong> A ideia da CRIA é concebida. As ferramentas ainda não entregam a qualidade cinematográfica exigida.
+                        </div>
+                    </div>
+                    <div class="tl-row">
+                        <div class="tl-year">2024</div>
+                        <div class="tl-body">
+                            <strong>O estudo.</strong> Cada modelo, cada release. Construímos repertório técnico e estético profundo.
+                        </div>
+                    </div>
+                    <div class="tl-row">
+                        <div class="tl-year">2025</div>
+                        <div class="tl-body">
+                            <strong>O ponto de virada.</strong> Modelos generativos atingem fidelidade fotográfica e coerência temporal real.
+                        </div>
+                    </div>
+                    <div class="tl-row tl-active">
+                        <div class="tl-year">2026</div>
+                        <div class="tl-body">
+                            <strong>A luz se acende.</strong> A CRIA Frames é lançada. Cinema feito de inteligência, entregue em dias.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- -------- CAPACIDADES -------- -->
+    <section class="page page-capabilities" data-tab="capabilities">
+        <div class="container">
+            <div class="sec-head">
+                <span class="sec-tag">03 · DO QUE SOMOS CAPAZES</span>
+                <h2 class="sec-title">Tudo que a câmera pode —<br>e o que ela <em>não</em> pode.</h2>
+                <p class="sec-sub">Da fotografia mais íntima ao épico impossível. O nosso limite é a imaginação do roteiro.</p>
+            </div>
+
+            <div class="cap-grid">
+                <article class="cap-card">
+                    <span class="cap-ico">◐</span>
+                    <h3>Imagens hiper-realistas</h3>
+                    <p>Conceitos visuais impossíveis de fotografar com fidelidade indistinguível do real.</p>
+                </article>
+                <article class="cap-card">
+                    <span class="cap-ico">▣</span>
+                    <h3>Pôsteres & Key Art</h3>
+                    <p>Cartazes de cinema, capas de campanha e identidades visuais com direção de arte de alto nível.</p>
+                </article>
+                <article class="cap-card">
+                    <span class="cap-ico">◉</span>
+                    <h3>Fotografia 100% realista</h3>
+                    <p>Ensaios, produtos e locações que nunca existiram — com qualidade de equipamento profissional.</p>
+                </article>
+                <article class="cap-card">
+                    <span class="cap-ico">▶</span>
+                    <h3>Comerciais & VTs</h3>
+                    <p>Filmes publicitários com narrativa, ritmo e identidade cinematográfica de alto padrão.</p>
+                </article>
+                <article class="cap-card">
+                    <span class="cap-ico">◈</span>
+                    <h3>Filmes publicitários</h3>
+                    <p>Branded films, conteúdo institucional e campanhas com produção visual de altíssimo nível.</p>
+                </article>
+                <article class="cap-card cap-featured">
+                    <span class="cap-ico">✦</span>
+                    <h3>Curtas & Longa-metragens</h3>
+                    <p>Sim — fazemos cinema. Roteiros originais ou adaptações, curta ou longa, com estética autoral.</p>
+                </article>
+            </div>
+
+            <div class="cap-footer">
+                <p>Tem uma ideia que parecia impossível?</p>
+                <button class="btn btn-primary" data-tab="contact">Conte para nós</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- -------- PORTFÓLIO -------- -->
+    <section class="page page-portfolio" data-tab="portfolio">
+        <div class="container">
+            <div class="sec-head">
+                <span class="sec-tag">04 · PORTFÓLIO</span>
+                <h2 class="sec-title">Frames que contam histórias.</h2>
+                <p class="sec-sub">Uma seleção dos nossos trabalhos. Cada filme, um experimento; cada experimento, uma descoberta.</p>
+            </div>
+
+            <div id="portfolioGrid" class="port-grid"></div>
+
+            <div id="portfolioEmpty" class="port-empty">
+                <div class="empty-box">
+                    <div class="empty-ico">▣</div>
+                    <p>Nosso showreel está sendo finalizado.<br>Em breve, os primeiros frames.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- -------- CONTATO / PROPOSTAS -------- -->
+    <section class="page page-contact" data-tab="contact">
+        <div class="container container-sm">
+            <div class="sec-head">
+                <span class="sec-tag">05 · ENVIE SUA PROPOSTA</span>
+                <h2 class="sec-title">Clientes, parceiros<br>e ideias bem-vindos.</h2>
+                <p class="sec-sub">Lemos cada mensagem com atenção e respondemos em até 48 horas úteis.</p>
+            </div>
+
+            <div class="form-shell">
+                <form id="proposalForm">
+                    <div class="form-row">
+                        <label class="field">
+                            <span class="flabel">Nome completo *</span>
+                            <input type="text" name="name" required autocomplete="name" />
+                        </label>
+                        <label class="field">
+                            <span class="flabel">Empresa / Marca</span>
+                            <input type="text" name="company" autocomplete="organization" />
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <label class="field">
+                            <span class="flabel">E-mail *</span>
+                            <input type="email" name="email" required autocomplete="email" />
+                        </label>
+                        <label class="field">
+                            <span class="flabel">Telefone / WhatsApp</span>
+                            <input type="tel" name="phone" autocomplete="tel" placeholder="(62) 9 0000-0000" />
+                        </label>
+                    </div>
+                    <label class="field">
+                        <span class="flabel">Tipo de projeto *</span>
+                        <div class="select-wrap">
+                            <select name="type" required>
+                                <option value="">Selecione...</option>
+                                <option>Comercial / VT</option>
+                                <option>Filme publicitário</option>
+                                <option>Fotografia / Imagem</option>
+                                <option>Pôster / Key Art</option>
+                                <option>Curta-metragem</option>
+                                <option>Longa-metragem</option>
+                                <option>Parceria / Agência</option>
+                                <option>Outro</option>
+                            </select>
+                            <span class="select-arrow">▾</span>
+                        </div>
+                    </label>
+                    <label class="field">
+                        <span class="flabel">Descreva sua ideia *</span>
+                        <textarea name="message" rows="6" required placeholder="Conte sobre o projeto, prazo desejado, referências..."></textarea>
+                    </label>
+
+                    <div class="form-foot">
+                        <button type="submit" class="btn btn-primary btn-lg">Enviar proposta</button>
+                        <span class="form-note">Suas informações são lidas apenas pela equipe CRIA.</span>
+                    </div>
+                </form>
+
+                <div id="formSuccess" class="form-ok" style="display:none">
+                    <div class="ok-icon">✓</div>
+                    <h3>Recebemos sua proposta.</h3>
+                    <p>Nossa equipe entrará em contato em breve. Obrigado por confiar na CRIA.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- -------- ADMIN -------- -->
+    <section class="page page-admin" data-tab="admin">
+        <div class="container">
+
+            <!-- LOGIN -->
+            <div id="adminLogin" class="admin-gate">
+                <div class="gate-icon">⌬</div>
+                <h2>Área Restrita</h2>
+                <p>Acesso exclusivo para administradores da CRIA Frames.</p>
+                <form id="adminLoginForm" class="gate-form">
+                    <input type="password" id="adminPass" placeholder="Senha" autocomplete="current-password" />
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                </form>
+                <p id="adminError" class="gate-error" style="display:none">Senha incorreta.</p>
+            </div>
+
+            <!-- PANEL -->
+            <div id="adminPanel" style="display:none">
+                <div class="sec-head">
+                    <span class="sec-tag">▣ PAINEL ADMINISTRATIVO</span>
+                    <h2 class="sec-title">Caixa de Mensagens</h2>
+                </div>
+
+                <div class="admin-tabs">
+                    <button class="atab active" data-atab="inbox">
+                        Propostas recebidas <span id="badgeCount" class="badge">0</span>
+                    </button>
+                    <button class="atab" data-atab="portfolio">Gerenciar Portfólio</button>
+                    <button id="logoutBtn" class="atab atab-logout">Sair</button>
+                </div>
+
+                <!-- INBOX -->
+                <div id="secInbox" class="admin-sec active">
+                    <div id="proposalList" class="prop-list"></div>
+                    <div id="propEmpty" class="prop-empty">
+                        <p>Nenhuma proposta recebida ainda.</p>
+                    </div>
+                </div>
+
+                <!-- PORTFOLIO MANAGER -->
+                <div id="secPortfolio" class="admin-sec">
+                    <form id="addVideoForm" class="add-video-form">
+                        <h4>Adicionar vídeo ao portfólio</h4>
+                        <div class="form-row">
+                            <label class="field">
+                                <span class="flabel">Título *</span>
+                                <input type="text" name="title" required />
+                            </label>
+                            <label class="field">
+                                <span class="flabel">Categoria</span>
+                                <input type="text" name="category" placeholder="Ex: Comercial · 2026" />
+                            </label>
+                        </div>
+                        <label class="field">
+                            <span class="flabel">URL do vídeo (YouTube, Vimeo ou MP4) *</span>
+                            <input type="url" name="url" required placeholder="https://..." />
+                        </label>
+                        <label class="field">
+                            <span class="flabel">URL da thumbnail (opcional)</span>
+                            <input type="url" name="thumb" placeholder="https://..." />
+                        </label>
+                        <label class="field">
+                            <span class="flabel">Descrição</span>
+                            <textarea name="description" rows="3"></textarea>
+                        </label>
+                        <button type="submit" class="btn btn-primary">Publicar</button>
+                    </form>
+
+                    <div id="portList" class="port-admin-list"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+
+<!-- ===================== VIDEO MODAL ===================== -->
+<div id="videoModal" class="modal" style="display:none">
+    <button class="modal-x" id="videoModalClose">×</button>
+    <div class="modal-box">
+        <div id="playerWrap" class="player-wrap"></div>
+        <div class="modal-info">
+            <h3 id="mTitle"></h3>
+            <p id="mCat" class="m-cat"></p>
+            <p id="mDesc" class="m-desc"></p>
+        </div>
+    </div>
+</div>
+
+<!-- ===================== PROPOSAL MODAL ===================== -->
+<div id="propModal" class="modal" style="display:none">
+    <button class="modal-x" id="propModalClose">×</button>
+    <div class="modal-box modal-prop">
+        <div id="propDetail"></div>
+    </div>
+</div>
+
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+    <div class="container foot-grid">
+        <div class="foot-brand">
+            <img src="assets/logo.png" alt="CRIA Frames" class="logo-inv" />
+            <p>Cinema feito de inteligência.<br>Goiânia · Brasil · 2026</p>
+        </div>
+        <div class="foot-nav">
+            <div>
+                <h5>Navegação</h5>
+                <ul>
+                    <li><button data-tab="home">Início</button></li>
+                    <li><button data-tab="about">Sobre</button></li>
+                    <li><button data-tab="capabilities">Capacidades</button></li>
+                    <li><button data-tab="portfolio">Portfólio</button></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Contato</h5>
+                <ul>
+                    <li><button data-tab="contact">Enviar proposta</button></li>
+                    <li><a href="mailto:contato@criaframes.com">contato@criaframes.com</a></li>
+                    <li><a href="https://instagram.com/cria.frames" target="_blank" rel="noopener">@cria.frames</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container foot-bottom">
+        <span>© 2026 CRIA Frames · Criação Revolucionária com Inteligência Artificial</span>
+        <span class="rec">REC ●</span>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
