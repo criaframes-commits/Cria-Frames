@@ -1059,6 +1059,152 @@ ul    { list-style: none; }
 
 
 /* =========================================================
+   LANGUAGE SELECTOR SCREEN
+   ========================================================= */
+.lang-screen {
+    position: fixed; inset: 0; z-index: 700;
+    background: var(--void);
+    display: flex; align-items: center; justify-content: center;
+    animation: fadein .5s var(--ec);
+}
+.lang-screen.exiting {
+    animation: fadeout .5s var(--ec) forwards;
+}
+@keyframes fadeout { from{opacity:1} to{opacity:0} }
+
+.lang-inner {
+    text-align: center;
+    padding: 40px 24px;
+    width: 100%; max-width: 480px;
+    display: flex; flex-direction: column; align-items: center; gap: 24px;
+}
+.lang-logo { width: 80px; height: 80px; object-fit: contain; }
+
+.lang-question {
+    font-family: var(--fd); font-size: 22px; letter-spacing: .04em;
+    color: var(--bone); line-height: 1.5;
+    display: flex; flex-direction: column; gap: 4px;
+}
+.lang-q-en { color: var(--bone); }
+.lang-q-pt { color: var(--soft); font-size: 18px; }
+
+.lang-select-wrap { width: 100%; position: relative; }
+
+.lang-dropdown { position: relative; width: 100%; }
+
+.lang-selected {
+    width: 100%; padding: 14px 20px;
+    background: var(--ink); border: 1px solid var(--line);
+    color: var(--bone); font-size: 15px; font-family: var(--fb);
+    display: flex; align-items: center; gap: 12px;
+    cursor: pointer; transition: border-color .2s;
+}
+.lang-selected:hover { border-color: var(--beam); }
+.lang-flag { font-size: 22px; line-height: 1; }
+.lang-name { flex: 1; text-align: left; }
+.lang-arrow { color: var(--mute); font-size: 14px; transition: transform .2s; }
+.lang-dropdown.open .lang-arrow { transform: rotate(180deg); }
+
+.lang-options {
+    position: absolute; top: 100%; left: 0; right: 0; z-index: 10;
+    background: var(--ink); border: 1px solid var(--beam);
+    border-top: none;
+    max-height: 320px; overflow-y: auto;
+    display: none;
+}
+.lang-dropdown.open .lang-options { display: block; }
+
+.lang-option {
+    display: flex; align-items: center; gap: 12px;
+    padding: 11px 20px; cursor: pointer;
+    font-size: 14px; color: var(--soft);
+    transition: background .15s, color .15s;
+    border: none; background: none; width: 100%; text-align: left;
+}
+.lang-option:hover { background: rgba(31,71,232,.15); color: var(--bone); }
+.lang-option.selected { color: var(--beam); }
+.lang-option-flag { font-size: 20px; line-height: 1; flex-shrink: 0; }
+
+.lang-confirm {
+    width: 100%; padding: 16px;
+    font-size: 16px; letter-spacing: .12em;
+}
+.lang-note {
+    font-family: var(--fm); font-size: 10px; letter-spacing: .15em;
+    color: var(--mute); text-transform: uppercase;
+}
+
+
+/* =========================================================
+   DIRECT CONTACT LINKS
+   ========================================================= */
+.direct-contact {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    margin-bottom: 32px;
+}
+.dc-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 12px 20px;
+    border: 1px solid var(--line);
+    color: var(--soft); font-size: 14px; font-family: var(--fb);
+    transition: border-color .2s, color .2s;
+    text-decoration: none;
+}
+.dc-item:hover { border-color: var(--beam); color: var(--beam); }
+.dc-ico { font-size: 18px; color: var(--beam); }
+
+
+/* =========================================================
+   MOBILE VIDEO PLAYER — full cinema experience
+   ========================================================= */
+/* Desktop: modal-x is relative to modal-box */
+#videoModal .modal-box { position: relative; }
+
+@media (max-width: 768px) {
+    #videoModal.modal {
+        padding: 0;
+        align-items: flex-start;
+        background: #000;
+        backdrop-filter: none;
+    }
+    #videoModal .modal-box {
+        position: relative;
+        border: none; border-radius: 0;
+        display: flex; flex-direction: column;
+        width: 100vw;
+        height: 100dvh;
+        max-width: 100%;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    #videoModal .player-wrap {
+        position: relative;
+        width: 100vw;
+        height: calc(100vw * 9 / 16);
+        aspect-ratio: unset;
+        flex-shrink: 0;
+        background: #000;
+    }
+    /* Close button floats OVER the video, not pushing layout */
+    #videoModal .modal-x {
+        position: absolute;
+        top: 10px; right: 10px;
+        width: 38px; height: 38px;
+        font-size: 20px;
+        background: rgba(0,0,0,.65);
+        border-color: rgba(255,255,255,.25);
+        z-index: 20;
+    }
+    #videoModal .modal-info {
+        padding: 16px 20px 40px;
+        background: var(--ink);
+        flex: 1;
+    }
+    #videoModal .modal-info h3 { font-size: 18px; }
+}
+
+
+/* =========================================================
    RESPONSIVE
    ========================================================= */
 @media (max-width: 900px) {
@@ -1071,6 +1217,7 @@ ul    { list-style: none; }
     .prop-item { grid-template-columns: 1fr; gap: 10px; }
     .metrics { grid-template-columns: 1fr; }
     .container, .container-sm { padding: 0 20px; }
+    .direct-contact { flex-direction: column; }
 }
 
 @media (max-width: 600px) {
@@ -1083,4 +1230,6 @@ ul    { list-style: none; }
     .hero { padding: 40px 0 60px; }
     .hero-btns { flex-direction: column; }
     .intro-logo-wrap { width: min(90vw, 700px); }
+    .lang-question { font-size: 18px; }
+    .lang-q-pt { font-size: 15px; }
 }
