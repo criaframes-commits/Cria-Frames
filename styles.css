@@ -955,9 +955,10 @@ ul    { list-style: none; }
     position: absolute; top: 20px; right: 24px;
     width: 44px; height: 44px; border-radius: 50%;
     border: 1px solid var(--line);
+    background: rgba(7,8,11,.7);
     color: var(--bone); font-size: 26px; line-height: 1;
     display: flex; align-items: center; justify-content: center;
-    transition: all .2s;
+    transition: all .2s; z-index: 10;
 }
 .modal-x:hover { background: var(--beam); border-color: var(--beam); color: #fff; }
 
@@ -966,13 +967,54 @@ ul    { list-style: none; }
     background: var(--ink); border: 1px solid var(--line);
     overflow: hidden;
 }
-.player-wrap { aspect-ratio: 16/9; background: #000; }
+.player-wrap { aspect-ratio: 16/9; background: #000; width: 100%; }
 .player-wrap iframe,
 .player-wrap video { width: 100%; height: 100%; border: 0; display: block; }
 .modal-info { padding: 22px 30px; }
 .modal-info h3 { font-family: var(--fd); font-size: 28px; color: var(--bone); letter-spacing: .02em; margin-bottom: 8px; }
 .m-cat { font-family: var(--fm); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--beam); margin-bottom: 10px; }
 .m-desc { font-size: 14px; color: var(--soft); line-height: 1.6; }
+
+/* ── Mobile video modal: verdadeiro full-screen ── */
+@media (max-width: 768px) {
+    #videoModal.modal {
+        padding: 0;
+        align-items: flex-start;
+        background: #000;
+        backdrop-filter: none;
+    }
+    #videoModal .modal-box {
+        border: none;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 100dvh;
+        max-width: 100%;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    #videoModal .player-wrap {
+        width: 100vw;
+        /* 16:9 exact height based on screen width */
+        height: calc(100vw * 9 / 16);
+        aspect-ratio: unset;
+        flex-shrink: 0;
+    }
+    #videoModal .modal-x {
+        top: 10px;
+        right: 10px;
+        width: 40px; height: 40px;
+        border-color: rgba(255,255,255,.3);
+        font-size: 22px;
+    }
+    #videoModal .modal-info {
+        padding: 16px 20px 32px;
+        background: var(--ink);
+        flex: 1;
+    }
+    #videoModal .modal-info h3 { font-size: 20px; }
+}
 
 /* Proposal modal */
 .modal-prop { padding: 40px; }
@@ -1035,8 +1077,6 @@ ul    { list-style: none; }
     .cap-grid { grid-template-columns: 1fr; }
     .hero-title { font-size: 56px; }
     .sec-title  { font-size: 38px; }
-    .modal { padding: 12px; }
-    .modal-info { padding: 16px; }
     .modal-prop { padding: 24px; }
     .admin-gate { padding: 36px 24px; }
     .form-shell { padding: 20px; }

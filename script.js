@@ -218,12 +218,19 @@ function openVideoModal(it) {
     if (embedUrl) {
         const f = document.createElement('iframe');
         f.src = embedUrl;
-        f.allow = 'autoplay; encrypted-media; fullscreen';
+        f.allow = 'autoplay; encrypted-media; fullscreen; picture-in-picture';
         f.allowFullscreen = true;
+        f.setAttribute('allowfullscreen', '');
+        f.setAttribute('webkitallowfullscreen', '');
+        f.setAttribute('mozallowfullscreen', '');
+        f.style.cssText = 'width:100%;height:100%;border:0;display:block;';
         wrap.appendChild(f);
     } else {
         const v = document.createElement('video');
         v.src = it.url; v.controls = true; v.autoplay = true;
+        v.setAttribute('playsinline', '');
+        v.setAttribute('webkit-playsinline', '');
+        v.style.cssText = 'width:100%;height:100%;display:block;background:#000;';
         wrap.appendChild(v);
     }
     modal.style.display = 'flex';
