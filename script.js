@@ -155,7 +155,10 @@ function initProposalForm() {
    ========================================================= */
 function ytThumb(url) {
     const m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([\w-]{11})/);
-    return m ? `https://img.youtube.com/vi/${m[1]}/hqdefault.jpg` : null;
+    if (m) return `https://img.youtube.com/vi/${m[1]}/hqdefault.jpg`;
+    const gd = url.match(/drive\.google\.com\/file\/d\/([\w-]+)/);
+    if (gd) return `https://drive.google.com/thumbnail?id=${gd[1]}&sz=w640`;
+    return null;
 }
 
 function toEmbed(url) {
@@ -163,6 +166,8 @@ function toEmbed(url) {
     if (yt) return `https://www.youtube.com/embed/${yt[1]}?autoplay=1`;
     const vm = url.match(/vimeo\.com\/(\d+)/);
     if (vm) return `https://player.vimeo.com/video/${vm[1]}?autoplay=1`;
+    const gd = url.match(/drive\.google\.com\/file\/d\/([\w-]+)/);
+    if (gd) return `https://drive.google.com/file/d/${gd[1]}/preview?rm=minimal`;
     return null;
 }
 
@@ -411,7 +416,22 @@ function fmtDate(iso) {
 /* =========================================================
    BOOT
    ========================================================= */
+const DEFAULT_PORTFOLIO = [
+    { id: 'v_teaser',  title: 'TEASER — A ÚLTIMA CORRIDA', category: 'Teaser',  url: 'https://drive.google.com/file/d/16ULeD6E4ZPFkl9EroFPFR1rQuj5OfjKr/view' },
+    { id: 'v_corrida', title: 'A ÚLTIMA CORRIDA',           category: 'Curta',   url: 'https://drive.google.com/file/d/1STYkYGlajEVjdhbco_wSevvfBMeOaBj1/view' },
+    { id: 'v_espelho', title: 'MEU ESPELHO',                category: 'Curta',   url: 'https://drive.google.com/file/d/1wRPl93mmU2rdEqEDbrgNndlRXyu_hiqI/view' },
+    { id: 'v_craque',  title: 'O CRAQUE',                   category: 'Curta',   url: 'https://drive.google.com/file/d/1KuFvg-wOSvIVMgxzk75YoY54yMQlhcKa/view' },
+];
+
+function seedPortfolio() {
+    const stored = load(DB.portfolio);
+    const storedIds = new Set(stored.map(v => v.id));
+    const toAdd = DEFAULT_PORTFOLIO.filter(v => !storedIds.has(v.id));
+    if (toAdd.length) save(DB.portfolio, [...toAdd, ...stored]);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    seedPortfolio();
     initIntro();
     initNav();
     initProposalForm();
